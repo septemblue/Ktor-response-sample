@@ -7,8 +7,11 @@ import io.ktor.server.application.*
 fun Application.configureRouting() {
     routing {
         get("/") {
-                val responseObject = UserResponse("Raffael", "raffael.com")
-                call.respond(responseObject)
+            val responseObject = UserResponse("Raffael", "raffael.com")
+            call.respond(responseObject)
+        }
+        get("/headers") {
+            call.response.headers.append("server-name", "KtorServer")
         }
     }
 }

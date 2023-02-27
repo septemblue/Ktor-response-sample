@@ -1,3 +1,2 @@
 # Notes
-- Respond with http status
-- Send JSON Response
+- Attach headers on server response
