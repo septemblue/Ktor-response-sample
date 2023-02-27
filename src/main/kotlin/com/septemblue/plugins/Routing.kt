@@ -7,7 +7,13 @@ import io.ktor.server.application.*
 fun Application.configureRouting() {
     routing {
         get("/") {
-            call.respondText("Hello World!")
+                val responseObject = UserResponse("Raffael", "raffael.com")
+                call.respond(responseObject)
         }
     }
 }
+@kotlinx.serialization.Serializable
+data class UserResponse(
+    val name: String,
+    val email: String
+)
